@@ -1,0 +1,229 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic List</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #06ebf3;
+            margin: 0;
+            padding: 0;
+        }
+        #list-container {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #d30fe5;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        li button {
+            background-color: #ff6347;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        li button:hover {
+            background-color: #d32f2f;
+        }
+        input {
+            padding: 5px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+    <input id="input">
+    <button onclick="add()">Add</button>
+    <ul id="list-container">
+        <li>
+            Hello
+            <button onclick="remove(event)">Delete</button>
+        </li>
+    </ul>
+    <script>
+        var ul = document.getElementById("list-container");
+        var input = document.getElementById("input");
+
+        function add() {
+            if (input.value.trim() !== "") {
+                var additem = document.createElement("li");
+                additem.innerHTML = input.value + "<button onclick='remove(event)'>Delete</button>";
+                ul.appendChild(additem);
+                input.value = "";
+            } else {
+                alert("Please enter a valid item.");
+            }
+        }
+
+        function remove(event) {
+            event.target.parentElement.remove();
+        }
+    </script>
+</body>
+</html> -->
+
+
+<!-- student application form
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <h2>Student Form</h2>
+    <form id="studentForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br><br>
+        <label for="course">Course:</label>
+        <input type="text" id="course" name="course" required><br><br>
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <button type="button" onclick="saveStudent()">Save</button>
+    </form>
+    <br>
+    <table id="studentTable">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Course</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+    </table>
+
+    <script>
+        function saveStudent() {
+            var form = document.getElementById("studentForm");
+            var table = document.getElementById("studentTable");
+            var newRow = table.insertRow(-1);
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            var cell4 = newRow.insertCell(3);
+            var cell5 = newRow.insertCell(4);
+            var cell6 = newRow.insertCell(5);
+
+            cell1.innerHTML = form.elements["name"].value;
+            cell2.innerHTML = form.elements["age"].value;
+            cell3.innerHTML = form.elements["gender"].value;
+            cell4.innerHTML = form.elements["course"].value;
+            cell5.innerHTML = form.elements["email"].value;
+            cell6.innerHTML = "<button onclick='deleteRow(this)'>Delete</button>";
+        }
+
+        function deleteRow(btn) {
+            var row = btn.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+    </script>
+</body>
+</html> -->
+
+
+
+<!-- CREATE A POPUPBOX -->
+<style>
+    .overlay{
+        background-color: black;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        opacity:0.8;
+        z-index: 1;
+        display: none;
+    }
+    .popupbox{
+        position: absolute;
+        z-index: 2;
+        background-color: white;
+        color: black;
+        width: 40%;
+        border-radius: 10px;
+        left: 30%;
+        padding: 20px;
+        display:none;
+    }
+</style>
+<button onclick="show()">show</button>
+<div class="overlay"></div>
+<div class="popupbox">
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate dicta nemo a! Maxime, aspernatur? Dolor illo doloribus distinctio impedit voluptates eligendi quae molestiae labore! Iusto ea obcaecati odit ducimus in!</p>
+    <button onclick="closepopup()">close</button>
+</div>
+<script>
+    var overlay=document.querySelector(".overlay")
+    var popupbox=document.querySelector(".popupbox")
+    function show(){
+        popupbox.style.display="block"
+        overlay.style.display="block"
+
+    }
+    function closepopup(){
+        popupbox.style.display="none"
+        overlay.style.display="none"
+    }
+
+
+</script>

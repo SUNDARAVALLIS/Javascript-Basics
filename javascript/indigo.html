@@ -1,0 +1,203 @@
+<!-- <style>
+    div {
+    background-color: maroon;
+    width: 100px;
+    height: 90px;
+    transition: 5s;
+}
+</style>
+
+<div id="box"></div>
+<button onclick="myfunc()">change</button>
+<script>
+    var box=document.getElementById("box")
+
+    function myfunc(){
+        box.style.backgroundColor="yellow"
+    }
+    
+    
+
+</script> -->
+
+
+<!-- task1 -->
+
+<!-- <input id="one" onkeyup="print()">
+<button onclick="print()">print</button> -->
+<!-- <h1 id="contentofbox"></h1>
+<script>
+    var one=document.getElementById("one")
+    var content=document.getElementById("contentofbox")
+    function print(){
+        content.textContent=one.value
+    }
+    
+</script> -->
+
+
+<!-- task2 -->
+
+<!-- <button onclick="myfunction()">Add Hello</button>
+<div id="two"></div>
+<script>
+    var div=document.getElementById("two")
+    function myfunction(){
+        var listitem=document.createElement("h1")
+        listitem.textContent="hello"
+        div.append(listitem)
+    }
+</script> -->
+
+
+<!-- task3 -->
+
+<!-- 
+<button id="one" onclick="myfunc()">Change Colour</button>
+<script>
+    var but=document.getElementById("one")
+    function myfunc(){
+        but.style.backgroundColor="red"
+    }
+</script> -->
+
+<!-- task4 -->
+<!-- trhis is a normal approach -->
+<!-- <h1 id="Names"></h1>
+<button id="one" onclick="myfunc1()">Sundar</button>
+<button id="two" onclick="myfunc2()">Valli</button>
+<button id="three" onclick="myfunc3()">Dinesh</button>
+<script>
+    var one=document.getElementById("one")
+    var two=document.getElementById("two")
+    var three=document.getElementById("three") 
+    var header=document.getElementById("Names")
+    function myfunc1(){
+        header.textContent="Sundar"
+    }
+    function myfunc2(){
+        header.textContent="valli"
+    }
+    function myfunc3(){
+        header.textContent="Dinesh"
+    }
+</script> -->
+
+
+<!-- using event -->
+<!-- <h1 id="Names"></h1>
+<button id="one" onclick="myfunc1(event)">Sundar</button>
+<button id="two" onclick="myfunc2(event)">Valli</button>
+<button id="three" onclick="myfunc3(event)">Dinesh</button>
+<script>
+    var one=document.getElementById("one")
+    var two=document.getElementById("two")
+    var three=document.getElementById("three") 
+    var header=document.getElementById("Names")
+    function myfunc1(event){
+        header.textContent=event.target.textContent
+    }
+    function myfunc2(event){
+        header.textContent=event.target.textContent
+    }
+    function myfunc3(event){
+        header.textContent=event.target.textContent
+    }
+</script> -->
+
+<!-- task 5 -->
+<!-- Delete an element when it is clicked -->
+<!-- <h1 id="one" onclick="myfunc1(event)">Sundar</h1>
+<h1 id="two" onclick="myfunc2(event)">Valli</h1>
+<h1 id="three" onclick="myfunc3(event)">Dinesh</h1>
+<script>
+    var one=document.getElementById("one")
+    var two=document.getElementById("two")
+    var three=document.getElementById("three") 
+
+    function myfunc1(){
+        event.target.remove()
+    }
+    function myfunc2(){
+        event.target.remove()
+        
+    }
+    function myfunc3(){
+        event.target.remove()
+
+    }
+</script>  -->
+
+
+<!-- <h1 class="ok">one</h1>
+<h1 class="ok">two</h1>
+<h1 class="ok">three</h1>
+<script>
+    var div=document.querySelectorAll(".ok")
+    for(count=0;count<div.length;count=count+1){
+        console.log(div[count].textContent)
+    }
+</script> -->
+
+<!-- Creating HTML element using .createElement -->
+<!-- <div>
+    <p id="one"> hello </p>
+</div>
+<script>
+    var one=document.createElement("h1")
+    one.innerHTML="hello"
+    console.log(one)
+    
+</script> -->
+
+
+<!-- use of prepend -->
+<!-- <div>
+    <p id="one">  </p>
+</div>
+<script>
+    var div=document.querySelector("div")
+    div.append("hello")
+    div.prepend("world")
+</script> -->
+
+
+<!-- creating HTML element using insertAdjacentElement -->
+<!-- <div>
+    <h1>hello</1>
+    <h1>world</h1>
+</div>
+<script>
+    var div=document.querySelector("div")
+    var h1=document.createElement("h1")
+    h1.textContent="tamil"
+    div.insertAdjacentElement("afterbegin",h1);
+</script> -->
+
+
+<!-- Creation of simple to do list -->
+<!-- <input id="input">
+<button onclick="add()">Add</button>
+<ul id="list-container">
+    <li>
+        Hello
+        <button onclick="remove(event)" >Delete</button>
+    </li>
+</ul>
+<script>
+    var ul=document.getElementById("list-container")
+    var input =document.getElementById("input")
+   
+   
+    function add(){
+        var additem=document.createElement("li")
+        additem.innerHTML=input.value + "<button onclick='remove(event)'>Delete</button>"
+        ul.append(additem)
+    }
+    function remove(event){
+       
+       event.target.parentElement.remove()
+
+   }
+</script> -->
+
